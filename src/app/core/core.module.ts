@@ -1,9 +1,12 @@
 import { NgModule } from "@angular/core";
 import { SharedModule } from "../shared/shared.module";
+import { HeaderComponent } from "./header/header.component";
+
+const CoreComponents = [HeaderComponent];
 
 @NgModule({
-  declarations: [],
+  declarations: [CoreComponents],
   imports: [SharedModule],
-  exports: [],
+  exports: [CoreComponents],
 })
 export class CoreModule {}
