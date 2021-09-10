@@ -1,15 +1,11 @@
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@use '../../../mixins' as mix;
 
 mat-toolbar {
   background-color: #f7f8fa;
 }
 
 mat-toolbar.header {
-  @include flex-center;
+  @include mix.flex-centered;
   width: 100%;
   height: 40px;
 
