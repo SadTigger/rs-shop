@@ -1,0 +1,203 @@
+@use "../../../../_mixins.scss" as mix;
+
+ul.communications::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  height: 16px;
+  border-left: 1px solid rgb(213, 215, 219);
+}
+
+ul.communications {
+  position: relative;
+  margin: 0;
+  @include mix.flex-centered;
+
+  span.link-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  li.communication-item:first-child {
+    margin: 0;
+  }
+
+  span.link-info {
+    margin-left: 4px;
+    height: 20px;
+  }
+
+  li.communication-item {
+    height: 24px;
+    list-style: none;
+    margin-left: 12px;
+    >a.item-link:hover {
+      filter: invert(28%) sepia(20%) saturate(6316%) hue-rotate(314deg) brightness(93%) contrast(102%);
+    }
+
+    a.item-link {
+      height: 24px;
+      @include mix.flex-centered;
+      text-decoration: none;
+      color: inherit;
+    }
+
+  }
+
+  .dropdown {
+    overflow: hidden;
+
+    .dropdown-content {
+      border-radius: 6px;
+      padding: 12px 0px 12px 0px;
+      background-color: white;
+      display: none;
+      position: absolute;
+      z-index: 1;
+
+      ul {
+        position: absolute;
+        color: rgb(26, 26, 26);
+        list-style: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        li.dropdown-list-item {
+          width: 224px;
+          height: 30px;
+          padding: 3px 16px;
+
+          a.item-link {
+            height: 24px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+          }
+
+          button.contacts {
+            font-size: 14px;
+            font-family: Roboto, sans-serif;
+            outline: none;
+            border:none;
+            background: none;
+            cursor: pointer;
+          }
+
+        }
+
+        li.dropdown-list-item:nth-last-child(-n+5):hover {
+          color: #d62761;
+          background: rgba(219,33,95,0.08);
+        }
+
+        li.dropdown-list-item:last-child {
+          margin-top: 17px;
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        li.dropdown-list-item:last-child::before {
+          top: -9px;
+          position: absolute;
+          pointer-events: none;
+          width: 190px;
+          content: "";
+          border-top: 1px solid rgb(213, 215, 219);
+        }
+
+        li.dropdown-list-item:last-child::before::hover {
+          border-top: 1px solid rgb(213, 215, 219);
+        }
+      }
+    }
+
+    .dropdown-btn {
+      font-size: 14px;
+      margin-left: 12px;
+      background: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .dropdown-btn::after {
+      margin-left: 6px;
+      font-size: 8px;
+      content: "\25bc";
+    }
+
+    .dropdown-btn:hover {
+      color: #d62761;
+    }
+
+    .dropdown-content.active {
+      @include mix.flex-centered;
+      width: 224px;
+      height: 227px;
+    }
+
+    .dropdown-btn.active::after {
+      content: "\25b2";
+    }
+
+    .dropdown-btn.active:hover {
+      color: black;
+    }
+
+  }
+
+}
+
+li.phone-item, .phone-item {
+  @include mix.flex-centered;
+
+  span.phone-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.phone-item {
+  width: 142px;
+
+  .phone {
+    margin-left: 4px;
+  }
+}
+
+span.viber-icon {
+  background: url(/assets/svg/communications/viber.svg);
+}
+
+span.a1-icon {
+  background: url(/assets/svg/communications/a1.svg);
+}
+
+span.life-icon {
+  background: url(/assets/svg/communications/life.svg);
+}
+
+span.home-icon {
+  background: url(/assets/svg/communications/home.svg);
+}
+
+span.telegram-icon {
+  background: url(/assets/svg/communications/telegram.svg);
+}
+
+span.email-icon {
+  background: url(/assets/svg/communications/email.svg);
+}
+
+span.feedback-icon {
+  background: url(/assets/svg/communications/feedback.svg);
+}
+
+span.call-icon {
+  background: url(/assets/svg/communications/call.svg);
+}

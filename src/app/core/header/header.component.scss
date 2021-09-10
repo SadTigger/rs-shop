@@ -8,10 +8,13 @@ mat-toolbar.header {
   @include mix.flex-centered;
   width: 100%;
   height: 40px;
+  font-size: 14px;
+  line-height: 20px;
 
   .inner-header {
     width: 1090px;
     height: 40px;
+    @include mix.flex-centered;
 
     app-location {
       cursor: pointer;
@@ -19,6 +22,10 @@ mat-toolbar.header {
 
     app-location:hover {
       color: #d62761;
+    }
+
+    app-communications {
+      margin-left: 20px;
     }
   }
 }
