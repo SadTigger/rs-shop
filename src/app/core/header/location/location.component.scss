@@ -1,0 +1,18 @@
+@use '../../../../_mixins.scss' as mix;
+
+.container {
+  @include mix.flex-centered;
+  max-width: 180px;
+  height: 40px;
+
+  .location-pin {
+    width: 20px;
+    height: 20px;
+    font-size: 18px;
+  }
+
+  span {
+    margin-left: 5px;
+    max-width: 155px;
+  }
+}

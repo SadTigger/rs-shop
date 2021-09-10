@@ -12,5 +12,13 @@ mat-toolbar.header {
   .inner-header {
     width: 1090px;
     height: 40px;
+
+    app-location {
+      cursor: pointer;
+    }
+
+    app-location:hover {
+      color: #d62761;
+    }
   }
 }
