@@ -1,0 +1,35 @@
+@use "../../../../../mixins" as mix;
+
+.working-time-info::before {
+  position: absolute;
+  content: " ";
+  height: 16px;
+  left: 0;
+  border-left: 1px solid rgb(213, 215, 219);
+}
+
+.working-time-info {
+  position: relative;
+  color: #909399;
+  padding-left: 13px;
+  @include mix.flex-centered;
+  width: 113px;
+  height: 28px;
+
+  span.working-time-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(67%) sepia(6%) saturate(273%) hue-rotate(182deg) brightness(87%) contrast(87%);
+    background: url(/assets/svg/working-time/clock.svg);
+  }
+
+  .info-content {
+    min-width: 74px;
+    margin-left: 2px;
+    font-size: 10px;
+    line-height: 14px;
+    height: 28px;
+    @include mix.flex-centered;
+    flex-direction: column;
+  }
+}
