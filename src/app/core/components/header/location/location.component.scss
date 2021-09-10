@@ -1,4 +1,4 @@
-@use '../../../../_mixins.scss' as mix;
+@use '../../../../../mixins' as mix;
 
 .container {
   @include mix.flex-centered;

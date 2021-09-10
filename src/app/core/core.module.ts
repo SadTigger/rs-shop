@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { SharedModule } from "../shared/shared.module";
-import { CommunicationsComponent } from "./header/communications/communications.component";
-import { HeaderComponent } from "./header/header.component";
-import { LocationComponent } from "./header/location/location.component";
+import { CommunicationsComponent } from "./components/header/communications/communications.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { LocationComponent } from "./components/header/location/location.component";
 
 const CoreComponents = [
   HeaderComponent,
