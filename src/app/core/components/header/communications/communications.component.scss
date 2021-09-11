@@ -141,12 +141,13 @@ ul.communications {
       height: 227px;
     }
 
-    .dropdown-btn.active::after {
-      content: "\25b2";
+    .dropdown-btn.active, .dropdown-btn.active:hover {
+      color: #909399;
     }
 
-    .dropdown-btn.active:hover {
-      color: black;
+    .dropdown-btn.active::after {
+      content: "\25b2";
+      color: #909399;
     }
 
   }
