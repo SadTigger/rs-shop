@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { SharedModule } from "../shared/shared.module";
+import { FooterComponent } from "./components/footer/footer.component";
 import { CommunicationsComponent } from "./components/header/communications/communications.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { LocationComponent } from "./components/header/location/location.component";
@@ -12,6 +13,7 @@ const CoreComponents = [
   CommunicationsComponent,
   WorkingTimeComponent,
   NavbarMenuComponent,
+  FooterComponent,
 ];
 
 @NgModule({

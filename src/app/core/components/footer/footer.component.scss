@@ -1,0 +1,150 @@
+@use "../../../../mixins" as mix;
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-width: 1080px;
+  overflow: hidden;
+  background-color: #f7f8fa;
+
+  .inner-footer {
+    padding: 32px 2.2%;
+    min-height: 100%;
+    .footer-content{
+      max-width: 1090px;
+      margin: 0 auto;
+      .footer-communications {
+        margin-top: 32px;
+        padding-top: 12px;
+        text-align: center;
+        border-top: 1px solid rgba(213,215,219,0.9);
+        .communications-list {
+          margin: 0 auto;
+          max-width: 950px;
+          padding: 0px;
+          list-style: none;
+          white-space: nowrap;
+          @include mix.flex-space-between;
+          .communication-item {
+            a.item-link {
+              @include mix.flex-centered;
+              text-decoration: none;
+              color: inherit;
+              .link-icon {
+                width: 24px;
+                height: 24px;
+              }
+              .link-info {
+                margin-left: 4px;
+              }
+            }
+            a.item-link:hover {
+              filter: invert(28%) sepia(20%) saturate(6316%) hue-rotate(314deg) brightness(93%) contrast(102%);
+            }
+          }
+          .phone-item {
+            width: 142px;
+            @include mix.flex-centered;
+            .phone-icon {
+              width: 24px;
+              height: 24px;
+            }
+            .phone {
+              margin-left: 4px;
+            }
+          }
+        }
+      }
+
+      .footer-social {
+        margin-top: 12px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(213,215,219,0.9);
+        @include mix.flex-centered;
+        .social-list {
+          display: flex;
+          flex-direction: row;
+          a {
+            width: 46px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            .social-item {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              margin: 0 3px;
+              @include mix.inline-flex-centered;
+              background-color: white;
+            }
+            .social-item.vk:hover {
+              background-color: #447dbd;
+              svg path {
+                fill: #fff;
+              }
+            }
+            .social-item.facebook:hover {
+              background-color: #4469b0;
+              svg path {
+                fill: #fff;
+              }
+            }
+            .social-item.instagram:hover {
+              background-image: linear-gradient(169.11deg, rgb(249, 203, 118) 12.38%, rgb(234, 30, 89) 53.89%, rgb(192, 34, 144) 70.24%, rgb(88, 67, 199) 97.18%);
+              background-color: linear-gradient(169.11deg, rgb(249, 203, 118) 12.38%, rgb(234, 30, 89) 53.89%, rgb(192, 34, 144) 70.24%, rgb(88, 67, 199) 97.18%);
+              svg path {
+                fill: #fff;
+              }
+            }
+            .social-item.youtube:hover {
+              background-color: #ff2638;
+              svg path {
+                fill: #fff;
+              }
+            }
+            .social-item.ok:hover {
+              background-color: #fa9019;
+              svg path {
+                fill: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.viber-icon {
+  background: url(/assets/svg/communications/viber.svg);
+}
+
+.a1-icon {
+  background: url(/assets/svg/communications/a1.svg);
+}
+
+.life-icon {
+  background: url(/assets/svg/communications/life.svg);
+}
+
+.home-icon {
+  background: url(/assets/svg/communications/home.svg);
+}
+
+.telegram-icon {
+  background: url(/assets/svg/communications/telegram.svg);
+}
+
+.email-icon {
+  background: url(/assets/svg/communications/email.svg);
+}
+
+.feedback-icon {
+  background: url(/assets/svg/communications/feedback.svg);
+}
+
+.call-icon {
+  background: url(/assets/svg/communications/call.svg);
+}
