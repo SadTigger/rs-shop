@@ -10,8 +10,8 @@
     <span class="phone">+375 29 302 10 21</span>
   </li>
   <div class="dropdown">
-    <button class="dropdown-btn" (click)='toggleActive()' [class.active]="isActive">Ещё</button>
-    <div class="dropdown-content" [class.active]="isActive">
+    <button class="dropdown-btn" (click)='toggleActive()' [class.pressed]="isActive">Ещё</button>
+    <div class="dropdown-content" [class.pressed]="isActive">
       <ul>
         <li class="dropdown-list-item">
           <div class="phone-item">

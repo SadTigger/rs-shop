@@ -135,17 +135,17 @@ ul.communications {
       color: #d62761;
     }
 
-    .dropdown-content.active {
+    .dropdown-content.pressed {
       @include mix.flex-centered;
       width: 224px;
       height: 227px;
     }
 
-    .dropdown-btn.active, .dropdown-btn.active:hover {
+    .dropdown-btn.pressed, .dropdown-btn.pressed:hover {
       color: #909399;
     }
 
-    .dropdown-btn.active::after {
+    .dropdown-btn.pressed::after {
       content: "\25b2";
       color: #909399;
     }

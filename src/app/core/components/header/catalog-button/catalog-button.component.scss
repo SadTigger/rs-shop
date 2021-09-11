@@ -1,0 +1,67 @@
+@use "../../../../../mixins" as mix;
+
+.catalog-button {
+  @include mix.flex-centered;
+  border: 1px solid #d5d7db;
+  min-width: 161px;
+  height: 42px;
+  cursor: pointer;
+  border-radius: 40px;
+  margin-right: 8px;
+  background: #f7f8fa;
+  .catalog-button-icon {
+    @include mix.flex-centered;
+    flex-wrap: wrap;
+    width: 25px;
+    height: 25px;
+    background: #e52e6b;
+    margin: 8px 6px 8px 8px;
+    border-radius: 50%;
+    overflow: hidden;
+    .square {
+      height: 50%;
+      width: 50%;
+      position: relative;
+      .white-pixel {
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        position: absolute;
+      }
+
+      .white-pixel.first {
+        bottom: .5px;
+        right: .5px;
+      }
+      .white-pixel.second {
+        bottom: .5px;
+        left: .5px;
+      }
+      .white-pixel.third {
+        top: .5px;
+        right: .5px;
+      }
+      .white-pixel.forth {
+        top: .5px;
+        left: .5px;
+      }
+    }
+  }
+}
+
+.catalog-button:hover {
+  border: 1px solid #fff;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(23,35,38,0.05);
+}
+
+.catalog-button.pressed, .catalog-button.pressed:hover {
+  box-shadow: none;
+  border-color: transparent;
+  background: #ebedf0;
+  color: #909399;
+  .catalog-button-icon {
+    background-color: #f7f8fa;
+    color: inherit;
+  }
+}

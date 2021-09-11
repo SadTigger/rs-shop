@@ -47,11 +47,11 @@ ul.navbar {
       content: "\25bc";
     }
 
-    .navbar-dropdown-btn.active, .navbar-dropdown-btn.active:hover {
+    .navbar-dropdown-btn.pressed, .navbar-dropdown-btn.pressed:hover {
       color: #909399;
     }
 
-    .navbar-dropdown-btn.active::after {
+    .navbar-dropdown-btn.pressed::after {
       content: "\25b2";
       color: #909399;
     }
@@ -79,7 +79,7 @@ ul.navbar {
         }
       }
 
-    .navbar-dropdown-content.active {
+    .navbar-dropdown-content.pressed {
       display: flex;
       flex-direction: column;
       justify-content: center;

@@ -6,8 +6,8 @@
     <a href="#" class='item-link'>Бонусная программа</a>
   </li>
   <div class="navbar-dropdown">
-    <button class="navbar-dropdown-btn" (click)='toggleActive()' [class.active]="isActive">Ещё</button>
-    <div class="navbar-dropdown-content" [class.active]="isActive">
+    <button class="navbar-dropdown-btn" (click)='toggleActive()' [class.pressed]="isActive">Ещё</button>
+    <div class="navbar-dropdown-content" [class.pressed]="isActive">
       <ul>
         <li class="dropdown-item">
           <a href="#" class='item-link'>Оплата</a>

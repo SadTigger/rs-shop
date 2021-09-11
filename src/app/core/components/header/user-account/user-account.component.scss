@@ -1,0 +1,61 @@
+.account-wrapper {
+  font-size: 14px;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  margin: 0 8px;
+  color: #1a1a1a;
+
+  .user-popup-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 32px 8px 8px;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 80px;
+    border: 1px solid rgba(213,215,219,.6);
+    background: transparent;
+    cursor: pointer;
+    color: inherit;
+    transition: .2s ease;
+
+    .login-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .user-popup-toggle::after {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    border: 4px solid transparent;
+    border-top: 5px solid;
+  }
+
+  .user-popup-toggle:hover {
+    border-color: transparent;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(23,35,38,0.05);
+    color: #1a1a1a;
+  }
+
+  .user-popup-toggle.pressed {
+    border-color: transparent;
+    background: #ebedf0;
+    color: #909399;
+    box-shadow: none;
+  }
+
+  .user-popup-toggle.pressed::after {
+    content: " ";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    border: 4px solid transparent;
+    border-top: 5px solid;
+    transform: rotateZ(180deg);
+  }
+}
