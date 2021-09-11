@@ -3,6 +3,7 @@ import { SharedModule } from "../shared/shared.module";
 import { CommunicationsComponent } from "./components/header/communications/communications.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { LocationComponent } from "./components/header/location/location.component";
+import { NavbarMenuComponent } from "./components/header/navbar-menu/navbar-menu.component";
 import { WorkingTimeComponent } from "./components/header/working-time/working-time.component";
 
 const CoreComponents = [
@@ -10,6 +11,7 @@ const CoreComponents = [
   LocationComponent,
   CommunicationsComponent,
   WorkingTimeComponent,
+  NavbarMenuComponent,
 ];
 
 @NgModule({
