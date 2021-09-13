@@ -11,6 +11,7 @@ import { NavbarMenuComponent } from "./components/header/navbar-menu/navbar-menu
 import { SearchFieldComponent } from "./components/header/search-field/search-field.component";
 import { UserAccountComponent } from "./components/header/user-account/user-account.component";
 import { WorkingTimeComponent } from "./components/header/working-time/working-time.component";
+import { LowerHeaderComponent } from "./components/lower-header/lower-header.component";
 
 const CoreComponents = [
   HeaderComponent,
@@ -24,6 +25,7 @@ const CoreComponents = [
   SearchFieldComponent,
   UserAccountComponent,
   HeaderCartComponent,
+  LowerHeaderComponent,
 ];
 
 @NgModule({

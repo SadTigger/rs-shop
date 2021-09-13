@@ -1,0 +1,83 @@
+@use "../../../../mixins" as mix;
+
+mat-toolbar.lower-header {
+  background: linear-gradient(90deg,#941e94,#e52e6b);
+  height: 42px;
+  margin-bottom: 32px;
+  .header-wrapper {
+    display: flex;
+    align-items: center;
+    min-width: 941px;
+    max-width: 1090px;
+    margin: 0 auto;
+  }
+
+  .lower-header-wrapper {
+    padding: 0 2.2%;
+    background: transparent;
+    color: #fff;
+
+    .promo-list {
+      display: flex;
+      width: 100%;
+      font-size: 14px;
+      line-height: 32px;
+      .promotions {
+        @include mix.flex-centered;
+        position: relative;
+        padding-right: 14px;
+        margin-right: 2px;
+        a {
+          @include mix.flex-centered;
+          text-decoration: none;
+          color: inherit;
+
+          .promotions-icon {
+            @include mix.flex-centered;
+            width: 12px;
+            height: 11px;
+            margin-right: 6px;
+          }
+        }
+      }
+
+      a:hover {
+        background: rgba(26,26,26,.2);
+      }
+
+      .promotions::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        display: block;
+        width: 1px;
+        height: 14px;
+        margin-top: -7px;
+        background: #fff;
+        opacity: .3;
+      }
+
+      ul {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        flex: 1 1;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+          position: relative;
+          outline: none;
+          border-spacing: 0;
+          a {
+            padding: 10px 8px 12px;
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
