@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { SharedModule } from "../shared/shared.module";
 import { FooterComponent } from "./components/footer/footer.component";
 import { CatalogButtonComponent } from "./components/header/catalog-button/catalog-button.component";
@@ -30,7 +31,7 @@ const CoreComponents = [
 
 @NgModule({
   declarations: [CoreComponents],
-  imports: [SharedModule],
+  imports: [SharedModule, RouterModule],
   exports: [CoreComponents],
 })
 export class CoreModule {}
