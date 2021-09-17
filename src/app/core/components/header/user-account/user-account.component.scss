@@ -1,3 +1,5 @@
+@use "../../../../../mixins" as mix;
+
 .account-wrapper {
   .user-popup-toggle {
     position: relative;
@@ -51,4 +53,106 @@
     border-top: 5px solid;
     transform: rotateZ(180deg);
   }
+
+  .account-popup {
+    font-size: 14px;
+    line-height: 20px;
+    position: absolute;
+    min-width: 224px;
+    padding: 12px 0;
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+    z-index: 15;
+
+    .user {
+      margin-bottom: 16px;
+      .user-icon {
+        display: block;
+        margin: 0 auto 12px;
+        width: 48px;
+        height: 48px;
+      }
+      .login-btn {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 24px;
+        border: 0;
+        border-radius: 4px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: inherit;
+        line-height: inherit;
+        background: #0077CC;
+        color: #FFF;
+        cursor: pointer;
+        transition: .2s ease;
+      }
+
+      .login-btn:active {
+        background: #005FA3;
+      }
+    }
+
+    .profile-container {
+      @include mix.flex-centered;
+      flex-direction: column;
+      list-style: none;
+
+      .profile-item {
+        @include mix.flex-centered;
+        width: 100%;
+
+        a {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          width: 100%;
+          padding: 0 17px;
+          height: 30px;
+          text-decoration: none;
+          color: #1a1a1a;
+
+          span.link-icon {
+            height: 24px;
+            width: 24px;
+          }
+
+          span.link-info {
+            margin-left: 4px;
+            height: 20px;
+          }
+        }
+
+        a:hover {
+          background-color: rgba(219, 33, 95, 0.08);
+          color: #d62761;
+        }
+      }
+
+      .border {
+        width: 220px;
+        height: 1px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        border-top: 1px solid #ebedf0;
+      }
+    }
+  }
+}
+
+.user-icon {
+  background: url(/assets/svg/profile/user.svg);
+}
+
+.cart-icon {
+  background: url(/assets/svg/profile/cart.svg);
+}
+
+.favorites-icon {
+  background: url(/assets/svg/profile/favorites.svg);
+}
+
+.waiting-list-icon {
+  background: url(/assets/svg/profile/waiting-list.svg);
 }

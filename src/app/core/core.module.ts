@@ -7,8 +7,10 @@ import { CommunicationsComponent } from "./components/header/communications/comm
 import { HeaderCartComponent } from "./components/header/header-cart/header-cart.component";
 import { HeaderComponent } from "./components/header/header.component";
 import { LocationComponent } from "./components/header/location/location.component";
+import { LoginPopupComponent } from "./components/header/login-popup/login-popup.component";
 import { LogoComponent } from "./components/header/logo/logo.component";
 import { NavbarMenuComponent } from "./components/header/navbar-menu/navbar-menu.component";
+import { RegistrationPopupComponent } from "./components/header/registration-popup/registration-popup.component";
 import { SearchFieldComponent } from "./components/header/search-field/search-field.component";
 import { UserAccountComponent } from "./components/header/user-account/user-account.component";
 import { WorkingTimeComponent } from "./components/header/working-time/working-time.component";
@@ -27,6 +29,8 @@ const CoreComponents = [
   UserAccountComponent,
   HeaderCartComponent,
   LowerHeaderComponent,
+  RegistrationPopupComponent,
+  LoginPopupComponent,
 ];
 
 @NgModule({
