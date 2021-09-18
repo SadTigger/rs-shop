@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { LoginService } from "src/app/auth/services/login.service";
 import { User } from "src/app/core/models/user";
 import { RegistrationPopupComponent } from "../registration-popup/registration-popup.component";
 
@@ -18,7 +19,8 @@ export class LoginPopupComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    public dialogRef: MatDialogRef<RegistrationPopupComponent>
+    public dialogRef: MatDialogRef<RegistrationPopupComponent>,
+    private loginService: LoginService
   ) {}
 
   ngOnInit(): void {
@@ -33,7 +35,7 @@ export class LoginPopupComponent implements OnInit {
       login: this.form.value.login,
       password: this.form.value.password,
     };
-    localStorage.setItem("user", JSON.stringify(this.user));
+    this.loginService.login(this.user);
     this.dialogRef.close();
   }
 

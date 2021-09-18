@@ -66,7 +66,23 @@
     z-index: 15;
 
     .user {
+      @include mix.flex-centered;
+      flex-direction: column;
       margin-bottom: 16px;
+
+      .user-name {
+        height: auto;
+        display: block;
+        margin-bottom: 12px;
+        padding: 0 17px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: #909399;
+      }
       .user-icon {
         display: block;
         margin: 0 auto 12px;
@@ -99,6 +115,34 @@
       flex-direction: column;
       list-style: none;
 
+      button.profile-item {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 0 17px;
+        height: 30px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: inherit;
+        cursor: pointer;
+      }
+
+      span.link-icon {
+        height: 24px;
+        width: 24px;
+      }
+
+      span.link-info {
+        margin-left: 4px;
+        height: 20px;
+      }
+
+      button.profile-item:hover, a:hover {
+        background-color: rgba(219, 33, 95, 0.08);
+        color: #d62761;
+      }
+
       .profile-item {
         @include mix.flex-centered;
         width: 100%;
@@ -112,21 +156,6 @@
           height: 30px;
           text-decoration: none;
           color: #1a1a1a;
-
-          span.link-icon {
-            height: 24px;
-            width: 24px;
-          }
-
-          span.link-info {
-            margin-left: 4px;
-            height: 20px;
-          }
-        }
-
-        a:hover {
-          background-color: rgba(219, 33, 95, 0.08);
-          color: #d62761;
         }
       }
 
@@ -155,4 +184,8 @@
 
 .waiting-list-icon {
   background: url(/assets/svg/profile/waiting-list.svg);
+}
+
+.logout-icon {
+  background: url(/assets/svg/profile/logout.svg);
 }

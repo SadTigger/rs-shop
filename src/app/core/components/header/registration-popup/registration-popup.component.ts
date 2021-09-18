@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
+import { LoginService } from "src/app/auth/services/login.service";
 import { User } from "src/app/core/models/user";
 
 @Component({
@@ -15,7 +16,10 @@ export class RegistrationPopupComponent implements OnInit {
 
   user!: User;
 
-  constructor(public dialogRef: MatDialogRef<RegistrationPopupComponent>) {}
+  constructor(
+    public dialogRef: MatDialogRef<RegistrationPopupComponent>,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -29,7 +33,7 @@ export class RegistrationPopupComponent implements OnInit {
       login: this.form.value.login,
       password: this.form.value.password,
     };
-    localStorage.setItem("user", JSON.stringify(this.user));
+    this.loginService.login(this.user);
     this.dialogRef.close();
   }
 }
