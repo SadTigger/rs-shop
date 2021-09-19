@@ -22,8 +22,8 @@ export class CardProductComponent {
     price: 75,
     description:
       "dolor cupidatat consectetur aute aliqua deserunt consectetur quis occaecat esse adipisicing esse dolore duis magna amet aute minim nulla labore duis nostrud velit amet duis aliqua veniam sunt ullamco eu et ullamco sit ea eu veniam veniam anim enim enim",
-    isInCart: true,
-    isFavorite: true,
+    isInCart: false,
+    isFavorite: false,
     category: "appliances",
     subCategory: "teapots",
   };

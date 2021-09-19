@@ -13,7 +13,7 @@
       </a>
       <div class="product-info">
         <div class="in-stock">
-          <div class="stock-icon"></div>
+          <div class="stock-icon" appStockStatus [availableAmount]="testProduct.availableAmount"></div>
           <div>
             Доступно: {{ testProduct.availableAmount }}
             <span>шт.</span>
