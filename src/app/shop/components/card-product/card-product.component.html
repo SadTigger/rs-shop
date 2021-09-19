@@ -1,0 +1,54 @@
+<div class="card-wrapper">
+  <mat-card *ngIf="testProduct" class="product">
+    <mat-card-content>
+      <a routerLink="['/' + {{ testProduct.id }}]">
+        <!-- <span class="product-image" [style.backgroundImage]="'url('+testProduct.imageUrls[0]+')'"></span> -->
+        <span class="product-image-wrapper">
+          <span *ngIf="testProduct.discount" class="discount" [style.backgroundImage]="'url(/assets/svg/product/discount.svg)'"></span>
+          <img src="{{testProduct.imageUrls[0]}}" alt="{{testProduct.description}}">
+        </span>
+        <span class="product-name">
+          {{ testProduct.name }}
+        </span>
+      </a>
+      <div class="product-info">
+        <div class="in-stock">
+          <div class="stock-icon"></div>
+          <div>
+            Доступно: {{ testProduct.availableAmount }}
+            <span>шт.</span>
+          </div>
+        </div>
+        <div class="rating-row">
+          <div class="stars" [ngStyle]="{
+            'background': 'url(/assets/svg/product/rating-star-empty.svg)',
+            'background-repeat': 'repeat-x'
+          }">
+            <div class="filled-stars" [ngStyle]="{
+              'background': 'url(/assets/svg/product/rating-star.svg)',
+              'background-repeat': 'repeat-x',
+              'width': (testProduct.rating * 100) / 5 + '%'
+            }">
+            </div>
+          </div>
+        </div>
+        <div class="price">
+          <span>
+            Цена: {{ testProduct.price }}
+          </span>
+          <span>р.</span>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="add-to-card-btn" *ngIf="!testProduct.isInCart; else removeFromCart" (click)="addToCart()">В корзину</button>
+      <ng-template #removeFromCart>
+        <button class="add-to-card-btn" disabled>Товар в корзине</button>
+      </ng-template>
+      <button class="add-to-fav-btn" *ngIf="!testProduct.isFavorite; else removeFavorite" (click)="addToFavorite()">В избранное</button>
+      <ng-template #removeFavorite>
+        <button class="remove-from-fav-btn" (click)="removeFromFavorite()">Удалить из избранного</button>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>
+</div>
