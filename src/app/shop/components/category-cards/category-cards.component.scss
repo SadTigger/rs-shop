@@ -1,0 +1,9 @@
+.results {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  margin-top: 31px;
+  width: 1140px;
+  height: auto;
+}
