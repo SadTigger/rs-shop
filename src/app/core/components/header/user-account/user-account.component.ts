@@ -25,7 +25,6 @@ export class UserAccountComponent implements OnInit {
 
   ngOnInit() {
     this.username$ = this.loginService.getUserName();
-    // this.loginService.getUserName().subscribe(name => this.username = name);
     this.isLoggedIn$ = this.loginService.isLoggedIn();
   }
 
