@@ -1,0 +1,60 @@
+<section class="product">
+  <div class="product-wrapper">
+    <div class="route-row">
+      <a [routerLink]="['/']">Main</a> >
+      <a [routerLink]="['/' + testProduct.category]">{{testProduct.category}}</a> >
+      <a [routerLink]="['/' + testProduct.category + '/' + testProduct.subCategory]">{{testProduct.subCategory}}</a>
+    </div>
+    <mat-card class="detailed-product">
+      <mat-card-header>
+        <h1>{{ testProduct.name }}</h1>
+        <div class="rating-row">
+          <div class="stars" [ngStyle]="{
+            'background': 'url(/assets/svg/product/rating-star-empty.svg)',
+            'background-repeat': 'repeat-x'
+          }">
+            <div class="filled-stars" [ngStyle]="{
+              'background': 'url(/assets/svg/product/rating-star.svg)',
+              'background-repeat': 'repeat-x',
+              'width': (testProduct.rating * 100) / 5 + '%'
+            }">
+            </div>
+          </div>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <span *ngIf="testProduct.discount" class="discount" [style.backgroundImage]="'url(/assets/svg/product/discount.svg)'"></span>
+        <div class="product-info-container">
+          <app-detailed-product-slider></app-detailed-product-slider>
+          <div class="product-info">
+            <div class="price">
+              <span>
+                Цена: {{ testProduct.price }}
+              </span>
+              <span>р.</span>
+            </div>
+            <div class="in-stock">
+              <div class="stock-icon" appStockStatus [availableAmount]="testProduct.availableAmount"></div>
+              <div class="stock-amount">
+                В наличии: {{ testProduct.availableAmount }}
+                <span>шт.</span>
+              </div>
+            </div>
+            <button class="add-to-card-btn" *ngIf="!testProduct.isInCart; else removeFromCart" (click)="addToCart()">В корзину</button>
+            <ng-template #removeFromCart>
+              <button class="add-to-card-btn" disabled>Товар в корзине</button>
+            </ng-template>
+            <button class="add-to-fav-btn" *ngIf="!testProduct.isFavorite; else removeFavorite" (click)="addToFavorite()">В избранное</button>
+            <ng-template #removeFavorite>
+              <button class="remove-from-fav-btn" (click)="removeFromFavorite()">Удалить из избранного</button>
+            </ng-template>
+          </div>
+        </div>
+        <hr>
+        <div class="description">
+          <p>{{ testProduct.description }}</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

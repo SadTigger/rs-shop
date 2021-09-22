@@ -1,21 +1,20 @@
 <div class="card-wrapper">
-  <mat-card *ngIf="testProduct" class="product">
+  <mat-card *ngIf="product" class="product">
     <mat-card-content>
-      <a routerLink="['/' + {{ testProduct.id }}]">
-        <!-- <span class="product-image" [style.backgroundImage]="'url('+testProduct.imageUrls[0]+')'"></span> -->
+      <a [routerLink]="[product.id]">
         <span class="product-image-wrapper">
-          <span *ngIf="testProduct.discount" class="discount" [style.backgroundImage]="'url(/assets/svg/product/discount.svg)'"></span>
-          <img src="{{testProduct.imageUrls[0]}}" alt="{{testProduct.description}}">
+          <span *ngIf="product.discount" class="discount" [style.backgroundImage]="'url(/assets/svg/product/discount.svg)'"></span>
+          <img src="{{product.imageUrls[0]}}" alt="{{product.description}}">
         </span>
         <span class="product-name">
-          {{ testProduct.name }}
+          {{ product.name }}
         </span>
       </a>
       <div class="product-info">
         <div class="in-stock">
-          <div class="stock-icon" appStockStatus [availableAmount]="testProduct.availableAmount"></div>
+          <div class="stock-icon" appStockStatus [availableAmount]="product.availableAmount"></div>
           <div>
-            Доступно: {{ testProduct.availableAmount }}
+            Доступно: {{ product.availableAmount }}
             <span>шт.</span>
           </div>
         </div>
@@ -27,25 +26,25 @@
             <div class="filled-stars" [ngStyle]="{
               'background': 'url(/assets/svg/product/rating-star.svg)',
               'background-repeat': 'repeat-x',
-              'width': (testProduct.rating * 100) / 5 + '%'
+              'width': (product.rating * 100) / 5 + '%'
             }">
             </div>
           </div>
         </div>
         <div class="price">
           <span>
-            Цена: {{ testProduct.price }}
+            Цена: {{ product.price }}
           </span>
           <span>р.</span>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button class="add-to-card-btn" *ngIf="!testProduct.isInCart; else removeFromCart" (click)="addToCart()">В корзину</button>
+      <button class="add-to-card-btn" *ngIf="!product.isInCart; else removeFromCart" (click)="addToCart()">В корзину</button>
       <ng-template #removeFromCart>
         <button class="add-to-card-btn" disabled>Товар в корзине</button>
       </ng-template>
-      <button class="add-to-fav-btn" *ngIf="!testProduct.isFavorite; else removeFavorite" (click)="addToFavorite()">В избранное</button>
+      <button class="add-to-fav-btn" *ngIf="!product.isFavorite; else removeFavorite" (click)="addToFavorite()">В избранное</button>
       <ng-template #removeFavorite>
         <button class="remove-from-fav-btn" (click)="removeFromFavorite()">Удалить из избранного</button>
       </ng-template>

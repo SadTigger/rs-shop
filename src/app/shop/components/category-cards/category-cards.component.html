@@ -1,16 +1,6 @@
 <section class="results">
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
-  <app-card-product></app-card-product>
+  <app-card-product *ngFor="let item of products" [product]="item"></app-card-product>
+
   <button (click)="loadMore()">Загрузить ещё</button>
 </section>
 
-<!-- TODO -->
-<!-- <app-card-product *ngFor="let item of products"></app-card-product> -->

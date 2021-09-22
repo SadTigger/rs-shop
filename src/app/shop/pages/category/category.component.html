@@ -1,0 +1,15 @@
+<section class="category">
+
+  <h3>Category: {{ testCategory.name }}</h3>
+
+  <div class="content" *ngIf="testCategory.subCategories">
+    <div class="category-bars">
+      <mat-card class="category-bar" *ngFor="let item of testCategory.subCategories">
+        <a [routerLink]="[item.id]">{{ item.name }}</a>
+      </mat-card>
+    </div>
+
+  </div>
+
+</section>
+

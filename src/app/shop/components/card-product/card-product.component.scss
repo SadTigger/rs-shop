@@ -5,7 +5,10 @@
   outline: none;
   mat-card.product {
     width: 208px;
-    height: 100%;
+    height: 510px;
+    @include mix.flex-space-between;
+    text-align: center;
+    flex-direction: column;
     a {
       width: 100%;
       height: 100%;
@@ -24,9 +27,16 @@
           max-width: 150px;
           max-height: 150px;
         }
+        margin-bottom: 20px;
+      }
+
+      .product-name {
+        font-size: 16px;
+        line-height: 1px;
       }
     }
     .product-info {
+      margin-top: 20px;
       @include mix.flex-centered;
       flex-direction: column;
     }
@@ -51,9 +61,11 @@
     }
 
     .mat-card-actions {
+      margin-top: auto;
       @include mix.flex-centered;
       flex-direction: column;
       .add-to-card-btn {
+        cursor: pointer;
         width: 130px;
         height: 31px;
         background: #EA1653;
@@ -61,7 +73,7 @@
         margin-bottom: 12px;
       }
 
-      .add-to-card-btn:not(:active) {
+      .add-to-card-btn:disabled {
         background: gray;
       }
 

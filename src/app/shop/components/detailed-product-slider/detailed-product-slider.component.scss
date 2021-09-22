@@ -1,0 +1,15 @@
+swiper {
+  margin: 0;
+  box-sizing: border-box;
+  width: 728px;
+  height: auto;
+  border: 1px solid #E2E2E2;
+  background-color: white;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
