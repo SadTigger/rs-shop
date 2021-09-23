@@ -1,0 +1,8 @@
+<section class="sub-category" *ngIf="subcategory">
+  <h3>{{ subcategory.name }}</h3>
+  <div class="wrapper">
+    <app-category-cards *ngIf="goods" [products]="goods"></app-category-cards>
+  </div>
+</section>
+
+<router-outlet></router-outlet>

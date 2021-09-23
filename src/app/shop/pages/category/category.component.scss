@@ -1,0 +1,21 @@
+@use "../../../../mixins" as mix;
+
+.category {
+  @include mix.flex-centered;
+  flex-direction: column;
+  .category-bars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    margin-top: 31px;
+
+    .category-bar {
+      @include mix.flex-centered;
+      text-align: center;
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+

@@ -1,0 +1,60 @@
+<ul class="communications">
+  <li class="communication-item">
+    <a href="#" class='item-link'>
+      <span class="link-icon viber-icon"></span>
+      <span class="link-info">Viber</span>
+    </a>
+  </li>
+  <li class="communication-item phone-item">
+    <span class="phone-icon a1-icon"></span>
+    <span class="phone">+375 29 302 10 21</span>
+  </li>
+  <div class="dropdown">
+    <button class="dropdown-btn" (click)='toggleActive()' [class.pressed]="isActive">Ещё</button>
+    <div class="dropdown-content" [class.pressed]="isActive">
+      <ul>
+        <li class="dropdown-list-item">
+          <div class="phone-item">
+            <span class="phone-icon life-icon"></span>
+            <span class="phone">+375 25 502 10 21</span>
+          </div>
+        </li>
+        <li class="dropdown-list-item">
+          <div class="phone-item">
+            <span class="phone-icon home-icon"></span>
+            <span class="phone">+375 17 302 10 21</span>
+          </div>
+        </li>
+        <li class="dropdown-list-item">
+          <a href="#" class='item-link'>
+            <span class="link-icon telegram-icon"></span>
+            <span class="link-info">Telegram</span>
+          </a>
+        </li>
+        <li class="dropdown-list-item">
+          <a href="#" class='item-link'>
+            <span class="link-icon email-icon"></span>
+            <span class="link-info">Почта</span>
+          </a>
+        </li>
+        <li class="dropdown-list-item">
+          <a href="#" class='item-link'>
+            <span class="link-icon call-icon"></span>
+            <span class="link-info">Заказать звонок</span>
+          </a>
+        </li>
+        <li class="dropdown-list-item">
+          <a href="#" class='item-link'>
+            <span class="link-icon feedback-icon"></span>
+            <span class="link-info">Написать нам</span>
+          </a>
+        </li>
+        <li class="dropdown-list-item">
+          <button class="contacts">
+            Контакты
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ul>

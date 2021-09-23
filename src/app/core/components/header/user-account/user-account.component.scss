@@ -1,0 +1,191 @@
+@use "../../../../../mixins" as mix;
+
+.account-wrapper {
+  .user-popup-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 32px 8px 8px;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 80px;
+    border: 1px solid rgba(213,215,219,.6);
+    background: transparent;
+    cursor: pointer;
+    color: inherit;
+    transition: .2s ease;
+
+    .login-icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .user-popup-toggle::after {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    border: 4px solid transparent;
+    border-top: 5px solid;
+  }
+
+  .user-popup-toggle:hover {
+    border-color: transparent;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(23,35,38,0.05);
+    color: #1a1a1a;
+  }
+
+  .user-popup-toggle.pressed {
+    border-color: transparent;
+    background: #ebedf0;
+    color: #909399;
+    box-shadow: none;
+  }
+
+  .user-popup-toggle.pressed::after {
+    content: " ";
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    border: 4px solid transparent;
+    border-top: 5px solid;
+    transform: rotateZ(180deg);
+  }
+
+  .account-popup {
+    font-size: 14px;
+    line-height: 20px;
+    position: absolute;
+    min-width: 224px;
+    padding: 12px 0;
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 4px 12px 0 rgb(41 44 51 / 12%), 0 2px 2px 0 rgb(41 44 51 / 4%);
+    z-index: 15;
+
+    .user {
+      @include mix.flex-centered;
+      flex-direction: column;
+      margin-bottom: 16px;
+
+      .user-name {
+        height: auto;
+        display: block;
+        margin-bottom: 12px;
+        padding: 0 17px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 18px;
+        text-align: center;
+        color: #909399;
+      }
+      .user-icon {
+        display: block;
+        margin: 0 auto 12px;
+        width: 48px;
+        height: 48px;
+      }
+      .login-btn {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 24px;
+        border: 0;
+        border-radius: 4px;
+        font-family: inherit;
+        font-weight: 700;
+        font-size: inherit;
+        line-height: inherit;
+        background: #0077CC;
+        color: #FFF;
+        cursor: pointer;
+        transition: .2s ease;
+      }
+
+      .login-btn:active {
+        background: #005FA3;
+      }
+    }
+
+    .profile-container {
+      @include mix.flex-centered;
+      flex-direction: column;
+      list-style: none;
+
+      button.profile-item {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        padding: 0 17px;
+        height: 30px;
+        width: 100%;
+        border: none;
+        outline: none;
+        background: inherit;
+        cursor: pointer;
+      }
+
+      span.link-icon {
+        height: 24px;
+        width: 24px;
+      }
+
+      span.link-info {
+        margin-left: 4px;
+        height: 20px;
+      }
+
+      button.profile-item:hover, a:hover {
+        background-color: rgba(219, 33, 95, 0.08);
+        color: #d62761;
+      }
+
+      .profile-item {
+        @include mix.flex-centered;
+        width: 100%;
+
+        a {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          width: 100%;
+          padding: 0 17px;
+          height: 30px;
+          text-decoration: none;
+          color: #1a1a1a;
+        }
+      }
+
+      .border {
+        width: 220px;
+        height: 1px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        border-top: 1px solid #ebedf0;
+      }
+    }
+  }
+}
+
+.user-icon {
+  background: url(/assets/svg/profile/user.svg);
+}
+
+.cart-icon {
+  background: url(/assets/svg/profile/cart.svg);
+}
+
+.favorites-icon {
+  background: url(/assets/svg/profile/favorites.svg);
+}
+
+.waiting-list-icon {
+  background: url(/assets/svg/profile/waiting-list.svg);
+}
+
+.logout-icon {
+  background: url(/assets/svg/profile/logout.svg);
+}

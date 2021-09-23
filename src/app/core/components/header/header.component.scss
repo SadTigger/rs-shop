@@ -1,0 +1,85 @@
+@use '../../../../mixins' as mix;
+
+mat-toolbar {
+  background-color: #f7f8fa;
+}
+
+mat-toolbar.header {
+  @include mix.flex-centered;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  line-height: 20px;
+
+  .inner-header {
+    width: 1090px;
+    height: 40px;
+    @include mix.flex-centered;
+
+    app-location {
+      cursor: pointer;
+      margin-right: auto;
+    }
+
+    app-location:hover {
+      color: #d62761;
+    }
+
+    app-communications {
+      margin-left: 20px;
+    }
+  }
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(213,215,219,0.4);
+}
+
+mat-toolbar.middle-header {
+  padding: 0;
+  margin: 0;
+  display: block;
+  height: 90px;
+  .header-wrapper {
+    padding: 24px 2.2%;
+
+    app-logo {
+      margin-right: 13px;
+    }
+
+    app-catalog-button {
+      margin-right: 8px;
+    }
+
+    app-search-field {
+      width: 100%;
+    }
+
+    app-user-account {
+      font-size: 14px;
+      line-height: 20px;
+      position: relative;
+      display: block;
+      margin: 0 8px;
+    }
+
+    app-header-cart {
+      flex-shrink: 0;
+      font-size: 14px;
+      line-height: 20px;
+      color: #1a1a1a;
+      cursor: pointer;
+    }
+  }
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  min-width: 941px;
+  max-width: 1090px;
+  margin: 0 auto;
+  padding: 0 2.2%;
+}

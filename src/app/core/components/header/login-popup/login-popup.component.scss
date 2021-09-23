@@ -1,0 +1,32 @@
+@use "../../../../../mixins" as mix;
+
+.login-container {
+  margin-top: 96px;
+  min-width: 480px;
+  border-radius: 8px;
+}
+
+
+mat-card {
+  min-width: 480px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+mat-form-field {
+  display: block;
+}
+
+.registration {
+  @include mix.flex-centered;
+  button {
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    box-shadow: none;
+    color: #07c;
+    background: transparent;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

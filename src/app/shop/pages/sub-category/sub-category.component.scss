@@ -1,0 +1,11 @@
+@use "../../../../mixins" as mix;
+
+.sub-category {
+  @include mix.flex-centered;
+  flex-direction: column;
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

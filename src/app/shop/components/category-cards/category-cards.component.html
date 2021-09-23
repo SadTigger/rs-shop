@@ -1,0 +1,6 @@
+<section class="results">
+  <app-card-product *ngFor="let item of products" [product]="item"></app-card-product>
+
+  <button (click)="loadMore()">Загрузить ещё</button>
+</section>
+

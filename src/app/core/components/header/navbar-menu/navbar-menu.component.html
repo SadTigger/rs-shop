@@ -1,0 +1,24 @@
+<ul class="navbar">
+  <li class="navbar-item">
+    <a href="#" class='item-link'>Оплата частями</a>
+  </li>
+  <li class="navbar-item">
+    <a href="#" class='item-link'>Бонусная программа</a>
+  </li>
+  <div class="navbar-dropdown">
+    <button class="navbar-dropdown-btn" (click)='toggleActive()' [class.pressed]="isActive">Ещё</button>
+    <div class="navbar-dropdown-content" [class.pressed]="isActive">
+      <ul>
+        <li class="dropdown-item">
+          <a href="#" class='item-link'>Оплата</a>
+        </li>
+        <li class="dropdown-item">
+          <a href="#" class='item-link'>Доставка</a>
+        </li>
+        <li class="dropdown-item">
+          <a href="#" class='item-link'>Самовывоз</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ul>
