@@ -23,4 +23,81 @@
   <span>{{ text }}</span>
 </button>
 
+<div *ngIf="isPressed" class="catalog-popup">
+  <div class="container">
+    <div class="left">
+      <li class="category appliances">
+        <div>
+          Бытовая техника
+        </div>
+      </li>
+      <li class="category electronics">
+        <div>
+          Электроника
+        </div>
+      </li>
+      <li class="category computers-peripherals">
+        <div>
+          Компьютеры и периферия
+        </div>
+      </li>
+      <li class="category furniture">
+        <div>
+          Мебель
+        </div>
+      </li>
+      <li class="category hobbies">
+        <div>
+          Досуг и хобби
+        </div>
+      </li>
+    </div>
+    <div class="right">
+      <div class="appliances-sub">
+        <a [routerLink]="['/appliances/refrigerators']" class="subcategory" (click)="toggle()">Холодильники</a>
+        <a [routerLink]="['/appliances/cookers']" class="subcategory" (click)="toggle()">Кухонные плиты</a>
+        <a [routerLink]="['/appliances/dishwashers']" class="subcategory" (click)="toggle()">Посудомоечные машины</a>
+        <a [routerLink]="['/appliances/freezers']" class="subcategory" (click)="toggle()">Морозильники</a>
+        <a [routerLink]="['/appliances/microwaves']" class="subcategory" (click)="toggle()">Микроволновые печи</a>
+        <a [routerLink]="['/appliances/teapots']" class="subcategory" (click)="toggle()">Электрочайники</a>
+        <a [routerLink]="['/appliances/washing-machines']" class="subcategory" (click)="toggle()">Стиральные машины</a>
+        <a [routerLink]="['/appliances/irons']" class="subcategory" (click)="toggle()">Утюги</a>
+        <a [routerLink]="['/appliances/vacuum']" class="subcategory" (click)="toggle()">Пылесосы</a>
+      </div>
+      <div class="electronics-sub">
+        <a [routerLink]="['/electronics/mobile']" class="subcategory" (click)="toggle()">Смартфоны</a>
+        <a [routerLink]="['/electronics/watches']" class="subcategory" (click)="toggle()">Умные часы</a>
+        <a [routerLink]="['/electronics/tablets']" class="subcategory" (click)="toggle()">Планшеты</a>
+        <a [routerLink]="['/electronics/ebooks']" class="subcategory" (click)="toggle()">Электронные книги</a>
+        <a [routerLink]="['/electronics/powerbanks']" class="subcategory" (click)="toggle()">Портативные аккумуляторы</a>
+        <a [routerLink]="['/electronics/cameras']" class="subcategory" (click)="toggle()">Фотоаппараты</a>
+        <a [routerLink]="['/electronics/tvs']" class="subcategory" (click)="toggle()">Телевизоры</a>
+        <a [routerLink]="['/electronics/headphones']" class="subcategory" (click)="toggle()">Наушники и гарнитуры</a>
+      </div>
+      <div class="computers-peripherals-sub">
+        <a [routerLink]="['/computers-peripherals/laptops']" class="subcategory" (click)="toggle()">Ноутбуки</a>
+        <a [routerLink]="['/computers-peripherals/computers']" class="subcategory" (click)="toggle()">Компьютеры</a>
+        <a [routerLink]="['/computers-peripherals/consoles']" class="subcategory" (click)="toggle()">Игровые приставки</a>
+        <a [routerLink]="['/computers-peripherals/hardware']" class="subcategory" (click)="toggle()">Комплектующие</a>
+        <a [routerLink]="['/computers-peripherals/peripherals']" class="subcategory" (click)="toggle()">Компьютерная периферия</a>
+        <a [routerLink]="['/computers-peripherals/monitors']" class="subcategory" (click)="toggle()">Мониторы</a>
+      </div>
+
+      <div class="furniture-sub">
+        <a [routerLink]="['/furniture/sofas']" class="subcategory" (click)="toggle()">Диваны, тахты</a>
+        <a [routerLink]="['/furniture/armchairs']" class="subcategory" (click)="toggle()">Кресла</a>
+        <a [routerLink]="['/furniture/cabinets']" class="subcategory" (click)="toggle()">Шкафы</a>
+        <a [routerLink]="['/furniture/chairs']" class="subcategory" (click)="toggle()">Стулья</a>
+        <a [routerLink]="['/furniture/tables']" class="subcategory" (click)="toggle()">Столы, столики</a>
+        <a [routerLink]="['/furniture/beds']" class="subcategory" (click)="toggle()">Кровати</a>
+      </div>
+
+      <div class="hobbies-sub">
+        <a [routerLink]="['/hobbies/music-instruments']" class="subcategory" (click)="toggle()">Музыкальные инструменты</a>
+        <a [routerLink]="['/hobbies/books']" class="subcategory" (click)="toggle()">Книги</a>
+        <a [routerLink]="['/hobbies/fun-and-rest']" class="subcategory" (click)="toggle()">Развлечения и отдых</a>
+      </div>
+    </div>
+  </div>
+</div>
 
