@@ -25,6 +25,8 @@ export class RegistrationPopupComponent implements OnInit {
     this.form = new FormGroup({
       login: new FormControl("", [Validators.required]),
       password: new FormControl(null, [Validators.required]),
+      firstName: new FormControl("", [Validators.required]),
+      lastName: new FormControl("", [Validators.required]),
     });
   }
 
@@ -32,6 +34,8 @@ export class RegistrationPopupComponent implements OnInit {
     this.user = {
       login: this.form.value.login,
       password: this.form.value.password,
+      firstName: this.form.value.firstName,
+      lastName: this.form.value.lastName,
     };
     this.loginService.login(this.user);
     this.dialogRef.close();
