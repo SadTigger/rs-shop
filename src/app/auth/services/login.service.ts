@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { BehaviorSubject, Observable } from "rxjs";
@@ -11,13 +12,25 @@ export class LoginService {
 
   userLogin = new BehaviorSubject<string>("");
 
-  constructor(private router: Router) {}
+  token!: string;
+
+  api: string = "http://localhost:3004";
+
+  constructor(private router: Router, private http: HttpClient) {}
+
+  getToken(user: User) {
+    return this.http.post<string>(`${this.api}/users/register`, user);
+  }
 
   login(user: User): void {
     this.loggedIn.next(true);
     this.userLogin.next(user.login);
-    localStorage.setItem("user", JSON.stringify(user));
-    this.router.navigate(["/"]);
+    this.getToken(user).subscribe((response) => {
+      const obj = JSON.parse(JSON.stringify(response));
+      user.token = obj.token;
+      localStorage.setItem("user", JSON.stringify(user));
+      this.router.navigate(["/"]);
+    });
   }
 
   logout(): void {
