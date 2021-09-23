@@ -28,27 +28,27 @@
     <div class="left">
       <li class="category appliances">
         <div>
-          Бытовая техника
+          <a [routerLink]="['/appliances']" (click)="toggle()">Бытовая техника</a>
         </div>
       </li>
       <li class="category electronics">
         <div>
-          Электроника
+          <a [routerLink]="['/electronics']" (click)="toggle()">Электроника</a>
         </div>
       </li>
       <li class="category computers-peripherals">
         <div>
-          Компьютеры и периферия
+          <a [routerLink]="['/computers-peripherals']" (click)="toggle()">Компьютеры и периферия</a>
         </div>
       </li>
       <li class="category furniture">
         <div>
-          Мебель
+          <a [routerLink]="['/furniture']" (click)="toggle()">Мебель</a>
         </div>
       </li>
       <li class="category hobbies">
         <div>
-          Досуг и хобби
+          <a [routerLink]="['/hobbies']" (click)="toggle()">Досуг и хобби</a>
         </div>
       </li>
     </div>

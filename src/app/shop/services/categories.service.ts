@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable, of, throwError } from "rxjs";
-import { map, mergeMap } from "rxjs/operators";
+import { map, switchMap } from "rxjs/operators";
 import { Category } from "src/app/shared/models/category";
+import { SubCategory } from "src/app/shared/models/subcategory";
 
 @Injectable({
   providedIn: "root",
@@ -11,6 +12,10 @@ export class CategoriesService {
   api: string = "http://localhost:3004";
 
   categoryUrl: string;
+
+  category!: Category;
+
+  subcategory!: SubCategory;
 
   constructor(private http: HttpClient) {
     this.categoryUrl = `${this.api}/categories`;
@@ -25,9 +30,9 @@ export class CategoriesService {
       map((data) => {
         return data.find((el) => el.id === id);
       }),
-      mergeMap((data) => {
+      switchMap((data) => {
         if (!data) {
-          return throwError(new Error("There is no category."));
+          return throwError(new Error(`There is no category. ${id}`));
         }
         return of(data);
       })
@@ -45,9 +50,13 @@ export class CategoriesService {
       map((data) => {
         return data.find((el) => el.id === subcategoryId);
       }),
-      mergeMap((data) => {
+      switchMap((data) => {
         if (!data) {
-          return throwError(new Error("There is no subcategory."));
+          return throwError(
+            new Error(
+              `There is no category. ${categoryId} or subcategory. ${subcategoryId}`
+            )
+          );
         }
         return of(data);
       })

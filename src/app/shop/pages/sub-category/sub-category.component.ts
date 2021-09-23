@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, DoCheck, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Category } from "src/app/shared/models/category";
 import { Product } from "src/app/shared/models/product";
@@ -11,7 +11,7 @@ import { GoodsService } from "../../services/goods.service";
   templateUrl: "./sub-category.component.html",
   styleUrls: ["./sub-category.component.scss"],
 })
-export class SubCategoryComponent implements OnInit {
+export class SubCategoryComponent implements OnInit, DoCheck {
   category!: Category;
 
   subcategory!: SubCategory;
@@ -29,30 +29,35 @@ export class SubCategoryComponent implements OnInit {
     private goodsService: GoodsService
   ) {}
 
-  ngOnInit() {
+  ngDoCheck(): void {
     this.categoryId = this.activateRoute.snapshot.params.category;
     this.subcategoryId = this.activateRoute.snapshot.params.subcategory;
+  }
 
-    this.categoriesService
-      .isSubcategoryValid(this.categoryId, this.subcategoryId)
-      .subscribe((answer) => {
-        if (!answer) {
-          this.router.navigate(["/"]);
-        }
-      });
+  ngOnInit() {
+    this.activateRoute.url.subscribe(() => {
+      this.categoryId = this.activateRoute.snapshot.params.category;
+      this.subcategoryId = this.activateRoute.snapshot.params.subcategory;
 
-    this.categoriesService.getCategoryById(this.categoryId).subscribe((cat) => {
-      this.category = cat;
+      this.categoriesService
+        .isSubcategoryValid(this.categoryId, this.subcategoryId)
+        .subscribe((answer) => {
+          if (!answer) {
+            this.router.navigate(["/"]);
+          }
+        });
+
+      this.categoriesService
+        .getSubcategoryById(this.categoryId, this.subcategoryId)
+        .subscribe((cat) => {
+          this.subcategory = cat;
+        });
+
+      this.goodsService
+        .getGoodsByCategories(this.categoryId, this.subcategoryId)
+        .subscribe((goods) => {
+          this.goods = goods;
+        });
     });
-    this.categoriesService
-      .getSubcategoryById(this.categoryId, this.subcategoryId)
-      .subscribe((cat) => {
-        this.subcategory = cat;
-      });
-    this.goodsService
-      .getGoodsByCategories(this.categoryId, this.subcategoryId)
-      .subscribe((goods) => {
-        this.goods = goods;
-      });
   }
 }

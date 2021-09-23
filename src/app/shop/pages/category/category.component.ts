@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { Category } from "src/app/shared/models/category";
 import { CategoriesService } from "src/app/shop/services/categories.service";
 
@@ -11,6 +11,8 @@ import { CategoriesService } from "src/app/shop/services/categories.service";
 })
 export class CategoryComponent implements OnInit {
   category!: Category;
+
+  categoryTemp = new BehaviorSubject<Category | undefined>(undefined);
 
   currentUrl!: string;
 
@@ -35,6 +37,7 @@ export class CategoryComponent implements OnInit {
       });
     this.categoriesService.getCategoryById(this.categoryId).subscribe((cat) => {
       this.category = cat;
+      this.categoryTemp.next(cat);
     });
   }
 }

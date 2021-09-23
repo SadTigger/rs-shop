@@ -8,6 +8,7 @@ import { Product } from "src/app/shared/models/product";
 })
 export class CategoryCardsComponent {
   @Input() products!: Product[];
+  // @Input() products!: Observable<Product[]>;
 
   loadMore(): void {}
 }

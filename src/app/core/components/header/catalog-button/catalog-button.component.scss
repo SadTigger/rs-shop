@@ -98,6 +98,11 @@
 
 .category {
   cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .category:hover, .subcategory:hover {
